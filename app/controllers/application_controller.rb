@@ -1,11 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
-    
-    def flash_message
-        if flash[:notice] || flash[:alert] 
-            content_tag(:div, flash[:notice] || flash[:alert], class: "alert alert-#{flash[:notice] ? 'success' : 'danger'} alert dismissable fade show m-0", role:'alert')
-        end   
-    end
+
+    private
 
     def current_user
         if session[:user_id]
