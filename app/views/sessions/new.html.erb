@@ -1,1 +1,8 @@
-<h1>Hello World!</h1>
+<%= form_with url: "/sessions" do |f| %>
+    <%= render partial: "/layouts/errors", locals: {record: @user} %>
+    <%= f.label "E-Mail:" %>
+    <%= f.email_field :email %><br/>
+    <%= f.label "Password:" %>
+    <%= f.password_field :password %><br/> 
+    <%= f.submit "Login" %>
+<% end %>
