@@ -1,2 +1,7 @@
-<h1>Dashboards#dashboard</h1>
-<p>Find me in app/views/dashboards/dashboard.html.erb</p>
+<h1>Hi, <%= current_user.name %> </h1>
+<h2>This is your dashboard.  Explore...</h2>
+<% if current_user.admin? %>
+    <%= render 'admin_dash' %>
+<% else %>
+    <%= render 'employee_dash' %>
+<% end %>
