@@ -1,5 +1,4 @@
 <%= form_with url: "/sessions" do |f| %>
-    <%= render partial: "/layouts/errors", locals: {record: @user} %>
     <%= f.label "E-Mail:" %>
     <%= f.email_field :email %><br/>
     <%= f.label "Password:" %>
