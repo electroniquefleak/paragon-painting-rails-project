@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root to: 'home#welcome'
   get "registration", to: "users#new", as: "registration"
   get "login", to: 'sessions#new', as: "login"
+  get "logout", to: 'sessions#destroy', as: "logout"
+  get 'dashboards/dashboard', to: 'dashboards#dashboard', as: "dashboard"
 end
