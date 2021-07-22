@@ -1,0 +1,18 @@
+<h1 class="text-center"><%= @project.name %></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <h2 class="text center">Project Details</h2>
+            <ul>
+                <li>Location: <%= @project.location %></li>
+                <li>Start Date: <%= @project.start_date %></li>
+                <li>End Date: <%= @project.end_date %></li>
+                <li>Description: <%= @project.description %></li>
+                <% if current_user.admin? %>
+                    <li>Revenue Estimate: $<%= @project.revenue_estimate %></li>
+                    <li>Cost Estimate: $<%= @project.cost_estimate %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

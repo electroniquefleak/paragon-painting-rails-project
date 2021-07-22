@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :authenticate_admin!, except: :show
-    before_action :set_project, except [:new, :create]
+    before_action :set_project, except: [:new, :create]
 
     def new
         @project = Project.new
