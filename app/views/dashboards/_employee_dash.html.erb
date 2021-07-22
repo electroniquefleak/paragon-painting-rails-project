@@ -1,1 +1,10 @@
-<h1>Hello World!</h1>
+<div>
+    <h2>Your current projects:</h2>
+    <% if @projects.any? %>
+        <% @projects.each do |project| %>
+            <%= link_to project.name, project_path(project), class: "my-3" %>
+        <% end %>
+    <% else %>
+        <h3>No projects, yet.</h3>
+    <% end %>
+</div>
