@@ -16,3 +16,13 @@
         </div>
     </div>
 </div>
+
+<% if current_user.admin? %>
+    <div class="row flex-column align-items-center bg-light p-4">
+        <%= link_to "Edit", edit_project_path(@project), class: "btn btn-warning btn-lg w-auto" %>
+        <div class="border border-danger p-4 my-3 w-auto text-center">
+            <h3>Danger Zone: Action Can't Be Undone!</h3>
+            <%= button_to "Delete", project_path(@project), method: :delete, class: "btn btn-danger btn-lg", data: { Confirm: 'Are you sure?' } %>
+        </div>
+    </div>
+<% end %>
