@@ -16,6 +16,24 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def edit 
+    end
+
+    def update
+        if @project.update(project_params)
+          flash[:notice]= "Project updated"
+          redirect_to dashboard_path
+        else
+          flash[:alert]= "Project update was unsuccessful."
+          render :edit
+        end
+    end
+
+    def destroy
+        @project.destroy
+        redirect_to dashboard_path, notice: "Successful Project Deletion."
+    end
+
     def show 
     end
 
