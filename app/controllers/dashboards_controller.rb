@@ -1,7 +1,10 @@
 class DashboardsController < ApplicationController
   before_action :require_login
-  
+
   def dashboard
+    if current_user.admin?
+      @projects = Project.all
+    end
   end
 
   private
