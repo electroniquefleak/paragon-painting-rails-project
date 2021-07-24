@@ -5,8 +5,10 @@
             <h2><%= @project.name %></h2>
             <%= form_for [@project, @team] do |f| %>
                 <%= render partial: "layouts/errors", locals: {record: @team} %>
-                here is the form
-                <%= f.submit %>
+                <p>Select the Site Manager:</p>
+                <%= f.select(:site_manager_id, User.all.collect {|u| [u.name, u.id]} ) %>
+
+                <%= f.submit "Add Site Manager" %>
               <% end %>
         </div>
     </div>
