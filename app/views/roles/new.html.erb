@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <h1>Add Teammate:</h1>
+            <h2><%= @project.name %></h2>
+            <%= form_for [@project, @role] do |f| %>
+                <%= render partial: "layouts/errors", locals: {record: @role} %>
+                <p>Select the Team Member:</p>
+                <%= f.select(:user_id, User.all.collect {|u| [u.name, u.id]} ) %><br>
+                <p>Title:</p>
+                <%= f.text_field :title %>
+                
+                <%= f.submit "Add Teammate" %>
+              <% end %>
+        </div>
+    </div>
+</div>
