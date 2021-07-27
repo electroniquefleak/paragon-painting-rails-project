@@ -14,5 +14,16 @@
     <%= f.number_field :revenue_estimate, step: 0.01, min: 0  %><br> 
     <%= f.label :cost_estimate %>
     <%= f.number_field :cost_estimate, step: 0.01, min: 0 %><br>
+    <p>Add Teammates</p>
+    <%= f.fields_for :roles do |r| %>
+      <li>
+          <%= r.label "Name:" %>
+          <%= r.select(:user_id, User.all.collect {|u| [u.name, u.id]} ) %>
+      </li>
+      <li>
+          <%= r.label :title %>
+          <%= r.text_field :title %>
+      <hr>
+      <% end %>
     <%= f.submit "Create Project!", class: "btn btn-success my-3" %>
   <% end %>

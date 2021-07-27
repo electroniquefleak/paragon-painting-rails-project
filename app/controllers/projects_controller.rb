@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
     def new
         @project = Project.new
+        5.times {@project.roles.build}
     end
 
     def create
