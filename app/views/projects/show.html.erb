@@ -29,7 +29,7 @@
 
 <% if current_user.admin? %>
     <div class="row flex-column align-items-center bg-light p-4">
-        <%= link_to "Add the Project Team", new_project_team_path(@project), class: "btn btn-success btn-lg w-auto m-3" %>
+        <%= link_to "Add additional Teammate", new_project_role_path(@project), class: "btn btn-success btn-lg w-auto m-3" %>
         <%= link_to "Edit", edit_project_path(@project), class: "btn btn-warning btn-lg w-auto" %>
         <div class="border border-danger p-4 my-3 w-auto text-center">
             <h3>Danger Zone: Action Can't Be Undone!</h3>
