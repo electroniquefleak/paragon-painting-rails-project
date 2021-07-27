@@ -53,7 +53,8 @@ class ProjectsController < ApplicationController
             :description,
             :revenue_estimate, 
             :cost_estimate,
-            user_ids: []
+            user_ids: [],
+            roles_attributes: [:user_id, :title]
           )
     end
 end
