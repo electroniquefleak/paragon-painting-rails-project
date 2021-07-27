@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-sm-12 mx-auto">
+            <h1>Teammates for <%= @project.name %>:</h1>
+            <ul>
+                <% @project.roles.each do |role| %>
+                    <li><%= role.user.name %>
+                        <span>(<%= role.title %>)</span>
+                        <% if current_user.admin? %>
+                            <%= link_to "Remove Teammate", project_role_path(@project, role), class: "btn btn-danger" %>
+                        <% end %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

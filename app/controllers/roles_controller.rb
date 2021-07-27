@@ -11,12 +11,24 @@ class RolesController < ApplicationController
             flash[:notice] = 'Teammate Added!'
             redirect_to project_role_path(params[:project_id])
         else
-            flash[:error] = 'Failed to add teammate!'  
+            flash[:alert] = 'Failed to add teammate!'  
             render :new
         end
     end
 
-    def show
+    def index
+        @project = Project.find(params[:project_id])
+    end
+
+    def destroy
+        role = Role.find(params[:id])
+        if role.destroy
+            flash[:notice] = "Teammate Removed!"
+            redirect_to project_role_path(params[:project_id])
+        else
+            flash[:alert] = "Teammate was not removed successfully. Try again."
+            render :index
+        end
     end
 
 

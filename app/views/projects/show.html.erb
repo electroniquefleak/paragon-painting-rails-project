@@ -15,14 +15,8 @@
             </ul>
         </div>
         <div class="col-sm-12 col-md-4">
-            <ul>
-                <h2 class="text center">Project Teammates</h2>
-                <% @project.roles.each do |teammate| %>
-                    <li><%= teammate.user.name %>
-                        <span>(<%= teammate.title %>)</span>
-                    </li>
-                <% end %>
-            </ul>
+            <h2 class="text center">Project Teammates</h2>
+            <%= link_to "See Project Team", project_roles_path(@project), class: "btn btn-success btn-lg w-auto m-3" %>
         </div>
     </div>
 </div>
@@ -30,7 +24,6 @@
 <% if current_user.admin? %>
     <div class="row flex-column align-items-center bg-light p-4">
     <h3 class="text-center"> Admin Controls </h3>
-        <%= link_to "See Project Team", project_role_path(@project), class: "btn btn-success btn-lg w-auto m-3" %>
         <%= link_to "Edit #{@project.name}", edit_project_path(@project), class: "btn btn-warning btn-lg w-auto" %>
         <div class="border border-danger p-4 my-3 w-auto text-center">
             <h3>Danger Zone: Action Can't Be Undone!</h3>
