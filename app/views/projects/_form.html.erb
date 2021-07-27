@@ -18,12 +18,11 @@
     <%= f.fields_for :roles do |r| %>
       <li>
           <%= r.label "Name:" %>
-          <%= r.select(:user_id, User.all.collect {|u| [u.name, u.id]} ) %>
+          <%= r.select(:user_id, User.all.collect {|u| [u.name, u.id]}, {prompt: 'Select Person'} ) %>
       </li>
       <li>
           <%= r.label :title %>
           <%= r.text_field :title %>
-      <hr>
       <% end %>
     <%= f.submit "Create Project!", class: "btn btn-success my-3" %>
   <% end %>
