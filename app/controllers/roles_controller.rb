@@ -1,5 +1,6 @@
 class RolesController < ApplicationController
-    before_action :set_project, only: [:new, :index]
+    before_action :set_project, only: [:new, :index, :edit]
+    before_action :set_role, only: [:edit, :update, :destroy]
 
     def new
         @role = Role.new
@@ -20,9 +21,21 @@ class RolesController < ApplicationController
     def index
     end
 
+    def edit
+    end
+
+    def update
+        if @role.update(title: params[:role][:title])
+            flash[:notice] = "Role title updated!"
+            redirect_to project_roles_path(params[:project_id])
+        else
+            flash[:alert] = "Title not updated, try again."
+            render :edit
+        end
+    end
+
     def destroy
-        role = Role.find(params[:id])
-        if role.destroy
+        if @role.destroy
             flash[:notice] = "Teammate Removed!"
             redirect_to project_roles_path(params[:project_id])
         else
@@ -42,5 +55,9 @@ class RolesController < ApplicationController
 
     def set_project
         @project = Project.find(params[:project_id])
+    end
+
+    def set_role
+        @role = Role.find(params[:id])
     end
 end

@@ -8,7 +8,10 @@
                         <li class="my-3"><%= role.user.name %>
                             <span>(<%= role.title %>)</span>
                             <% if current_user.admin? %>
-                                <%= button_to "Remove Teammate", project_role_path(@project, role), method: :delete, class: "btn btn-danger", data: { Confirm: 'Are you sure?' } %>
+                                <div class="d-flex">
+                                    <%= link_to "Edit Teammate Title", edit_project_role_path(@project, role), class: "btn btn-warning" %>
+                                    <%= button_to "Remove Teammate", project_role_path(@project, role), method: :delete, class: "btn btn-danger mx-3", data: { Confirm: 'Are you sure?' } %>
+                                </div>
                             <% end %>
                         </li>
                     <% end %>

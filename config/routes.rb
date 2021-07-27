@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :projects do
-    resources :roles, only: [:index, :new, :create, :destroy]
+    resources :roles, except: [:show]
   end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:create, :destroy]
