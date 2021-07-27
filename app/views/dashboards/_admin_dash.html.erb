@@ -1,8 +1,8 @@
-<%= link_to "Add a new project", new_project_path, class: "btn btn-primary" %>
+<%= link_to "Add a New Project", new_project_path, class: "btn btn-primary" %>
 <div class="container">
     <div class="row">
         <div class="col-md-3 col-sm-6">
-            <h2>All Projects:</h2>
+            <h2>Active Projects:</h2>
             <% @projects.each do |project| %>
                 <div class="my-3">
                     <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
