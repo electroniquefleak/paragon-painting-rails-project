@@ -1,6 +1,6 @@
-class TeamsController < ApplicationController
+class RolesController < ApplicationController
     def new
-        @team = Team.new
+        @role = Role.new
         @project = Project.find(params[:project_id])
     end
 end
