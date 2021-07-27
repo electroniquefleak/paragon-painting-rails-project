@@ -7,8 +7,9 @@
                 <%= render partial: "layouts/errors", locals: {record: @team} %>
                 <p>Select the Site Manager:</p>
                 <%= f.select(:site_manager_id, User.all.collect {|u| [u.name, u.id]} ) %>
-
-                <%= f.submit "Add Site Manager" %>
+                <p>Select the Team Member:</p>
+                <%= f.select(:user_id, User.all.collect {|u| [u.name, u.id]} ) %><br>
+                <%= f.submit "Create Team" %>
               <% end %>
         </div>
     </div>

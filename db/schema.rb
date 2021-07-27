@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 2021_07_23_222953) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.integer "user_id"
     t.integer "project_id"
-    t.integer "site_manager_id"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_teams_on_project_id"
-    t.index ["user_id"], name: "index_teams_on_user_id"
+    t.index ["project_id"], name: "index_roles_on_project_id"
+    t.index ["user_id"], name: "index_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
