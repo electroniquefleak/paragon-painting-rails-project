@@ -14,6 +14,16 @@
                 <% end %>
             </ul>
         </div>
+        <div class="col-sm-12 col-md-4">
+            <ul>
+                <h2 class="text center">Project Teammates</h2>
+                <% @project.roles.each do |teammate| %>
+                    <li><%= teammate.user.name %>
+                        <span>(<%= teammate.title %>)</span>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
     </div>
 </div>
 
