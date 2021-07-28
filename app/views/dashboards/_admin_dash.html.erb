@@ -17,5 +17,14 @@
                 </div>
             <% end %>
         </div>
+        <div class="col-md-3 col-sm-6">
+            <h2>Past Projects:</h2>
+            <% if @past_projects.any? %>
+            <% @past_projects.each do |project| %>
+                <div class="my-3">
+                    <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
