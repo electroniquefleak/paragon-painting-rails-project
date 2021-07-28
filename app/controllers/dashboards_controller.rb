@@ -4,6 +4,9 @@ class DashboardsController < ApplicationController
   def dashboard
     if current_user.admin?
       @projects = Project.all
+      @active_projects = Project.active
+      @future_projects = Project.future
+      @past_projects = Project.past
     else
       @projects = current_user.projects
     end

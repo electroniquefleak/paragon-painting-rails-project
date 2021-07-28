@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3 col-sm-6">
-            <h2>All Projects:</h2>
+            <h3>All Projects:</h3>
             <% @projects.each do |project| %>
                 <div class="my-3">
                     <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
@@ -10,7 +10,7 @@
             <% end %>
         </div>
         <div class="col-md-3 col-sm-6">
-            <h2>Current/Active Projects:</h2>
+            <h3>Current/Active Projects:</h3>
             <% @active_projects.each do |project| %>
                 <div class="my-3">
                     <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
@@ -18,21 +18,27 @@
             <% end %>
         </div>
         <div class="col-md-3 col-sm-6">
-            <h2>Past Projects:</h2>
+            <h3>Past Projects:</h3>
             <% if @past_projects.any? %>
             <% @past_projects.each do |project| %>
                 <div class="my-3">
                     <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
                 </div>
             <% end %>
+        <% else %>
+            <h5>No past projects, yet.</h5>
+        <% end %>
         </div>
         <div class="col-md-3 col-sm-6">
-            <h2>Future Projects:</h2>
+            <h3>Future Projects:</h3>
             <% if @future_projects.any? %>
-            <% @future_projects.each do |project| %>
-                <div class="my-3">
-                    <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
-                </div>
+                <% @future_projects.each do |project| %>
+                    <div class="my-3">
+                        <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
+                    </div>
+                <% end %>
+            <% else %>
+                <h5>No future projects, yet.</h5>
             <% end %>
         </div>
     </div>
