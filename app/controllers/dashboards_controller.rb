@@ -9,6 +9,9 @@ class DashboardsController < ApplicationController
       @past_projects = Project.past
     else
       @projects = current_user.projects
+      @active_projects = current_user.projects.active
+      @future_projects = current_user.projects.future
+      @past_projects = current_user.projects.past
     end
   end
 

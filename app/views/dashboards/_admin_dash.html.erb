@@ -1,23 +1,19 @@
 <%= link_to "Add a New Project", new_project_path, class: "btn btn-primary" %>
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <h3>All Projects:</h3>
-            <% @projects.each do |project| %>
-                <div class="my-3">
-                    <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
-                </div>
-            <% end %>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <h3>Current/Active Projects:</h3>
+        <div class="col-md-4 col-sm-6">
+            <h3>Active Projects:</h3>
+            <% if @active_projects.any? %>
             <% @active_projects.each do |project| %>
                 <div class="my-3">
                     <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
                 </div>
             <% end %>
+            <% else %>
+                <h5>No active projects, yet.</h5>
+            <% end %>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <h3>Past Projects:</h3>
             <% if @past_projects.any? %>
             <% @past_projects.each do |project| %>
@@ -25,11 +21,11 @@
                     <%= link_to project.name, project_path(project), class: "btn btn-secondary" %>
                 </div>
             <% end %>
-        <% else %>
-            <h5>No past projects, yet.</h5>
-        <% end %>
+            <% else %>
+                <h5>No past projects, yet.</h5>
+            <% end %>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <h3>Future Projects:</h3>
             <% if @future_projects.any? %>
                 <% @future_projects.each do |project| %>
