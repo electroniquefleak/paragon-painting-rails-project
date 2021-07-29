@@ -19,9 +19,11 @@
             <% else %>
                 <h5 class="text-center">No teammates assigned to the <%= @project.name %> project.</h5>
             <% end %>
-            <div class="text-center my-3">
-                <%= link_to "Add a teammate", new_project_role_path(@project), class: "btn btn-success" %>
-            </div>
+            <% if current_user.admin? %>
+                <div class="text-center my-3">
+                    <%= link_to "Add a Teammate", new_project_role_path(@project), class: "btn btn-success" %>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>

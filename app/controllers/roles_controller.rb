@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
     before_action :set_project, only: [:new, :index, :edit]
     before_action :set_role, only: [:edit, :update, :destroy]
+    before_action :authenticate_admin!, except: :index
 
     def new
         @role = Role.new
