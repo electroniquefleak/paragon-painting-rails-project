@@ -4,9 +4,16 @@
             <h3>Edit <%= @role.title %></h3>
             <%= form_for [@project, @role] do |f| %>
                 <%= render partial: "layouts/errors", locals: {record: @role} %>
-                <p>Title:</p>
-                <%= f.text_field :title %>
-                <%= f.submit "Edit Team Role" %>
+                <div class="mb-3">
+                <%= f.select(:user_id, User.where.not(id: @project.users).collect {|u| [u.name, u.id]}, {prompt: 'Select Person'}, class: "form-control" ) %>
+                </div>
+                <div class="mb-3">
+                    <%= f.label :title, "Title:", class: "form-label" %>
+                    <%= f.text_field :title, class: "form-control" %>
+                </div>
+                <div class="text-center">
+                    <%= f.submit "Edit Team Role", class: "btn btn-warning" %>
+                </div>
               <% end %>
         </div>
     </div>
