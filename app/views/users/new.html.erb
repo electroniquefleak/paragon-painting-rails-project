@@ -1,16 +1,34 @@
-<h1>New member? Register here.</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-xs-12 mx-auto">
+      <h1>New member? Register here.</h1>
 
-<%= form_with model: @user do |f| %>
-    <%= render partial: "/layouts/errors", locals: {record: @user} %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <%= f.label :email %>
-    <%= f.email_field :email %><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br> 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %><br>
-    <%= f.submit "Join Paragon today!" %>
-  <% end %>
-
-  <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+      <%= form_with model: @user do |f| %>
+        <%= render partial: "/layouts/errors", locals: {record: @user} %>
+        <div class="mb-3">
+          <%= f.label :name, "Name:", class: "form-label" %><br>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :email, "Email:", class: "form-label" %><br>
+          <%= f.email_field :email, class: "form-control" %>
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password, "Password:", class: "form-label" %><br>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password_confirmation, "Password Confirmation:", class: "form-label" %><br>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class="text-center mb-3">
+          <%= f.submit "Join Paragon today!", class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+      <div class="text-center mb-3">
+        <%= button_to "Log in with Google", '/auth/google_oauth2', class: "btn btn-primary"  %>
+      </div>
+    </div>
+  </div>
+</div>
