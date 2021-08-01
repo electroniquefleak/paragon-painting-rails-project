@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
           flash[:notice] = "Your project has been created."
           redirect_to dashboard_path
         else 
+          5.times {@project.roles.build}
           render :new
         end
     end

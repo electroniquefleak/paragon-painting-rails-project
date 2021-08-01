@@ -1,28 +1,45 @@
 <%= form_with model: @project do |f| %>
     <%= render partial: "/layouts/errors", locals: {record: @project} %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <%= f.label :location %>
-    <%= f.text_field :location %><br>
-    <%= f.label :description %>
-    <%= f.text_field :description %><br> 
-    <%= f.label :start_date %>
-    <%= f.date_field :start_date %><br>
-    <%= f.label :end_date %>
-    <%= f.date_field :end_date %><br>
-    <%= f.label :revenue_estimate %>
-    <%= f.number_field :revenue_estimate, step: 0.01, min: 0  %><br> 
-    <%= f.label :cost_estimate %>
-    <%= f.number_field :cost_estimate, step: 0.01, min: 0 %><br>
-    <p>Add Teammates</p>
+    <div class="mb-3">
+      <%= f.label :name, "Name:", class: "form-label" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :location, "Location:", class: "form-label" %><br>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :description, "Description:", class: "form-label" %><br>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :start_date, "Start Date:", class: "form-label" %><br>
+      <%= f.date_field :start_date,  class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :end_date, "End Date:", class: "form-label" %><br>
+      <%= f.date_field :end_date, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :revenue_estimate, "Revenue Estimate:", step: 0.01, min: 0, class: "form-label" %><br>
+      <%= f.number_field :revenue_estimate, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+    <%= f.label :cost_estimate, "Cost Estimate:", step: 0.01, min: 0, class: "form-label" %><br>
+    <%= f.number_field :cost_estimate, class: "form-control" %>
+  </div>
+
+    <h3 class="text-center">Add Teammates</h3>
+    <p class="text-center">Fields may be left blank.</p>
     <%= f.fields_for :roles do |r| %>
-      <li>
-          <%= r.label "Name:" %>
-          <%= r.select(:user_id, User.all.collect {|u| [u.name, u.id]}, {prompt: 'Select Person'} ) %>
-      </li>
-      <li>
-          <%= r.label :title %>
-          <%= r.text_field :title %>
-      <% end %>
+      <div class="mb-3">
+          <%= r.label :user_id, "Name:", class: "form-label" %>
+          <%= r.select(:user_id, User.all.collect {|u| [u.name, u.id]}, {prompt: 'Select Person'}, class: "form-control") %>
+      </div>
+      <div class="mb-3">
+          <%= r.label :title, "Title:", class: "form-label" %>
+          <%= r.text_field :title, class: "form-control" %>
+      </div>
+      <% end %><br>
     <%= f.submit "Create Project!", class: "btn btn-success my-3" %>
   <% end %>
