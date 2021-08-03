@@ -4,4 +4,6 @@ class Role < ApplicationRecord
 
     validates :title, presence: true
     validates_uniqueness_of :user_id, :scope => :project_id
+
+    scope :alphabetical, -> { Role.joins(:user).order(:name)}
 end
