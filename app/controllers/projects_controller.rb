@@ -37,6 +37,7 @@ class ProjectsController < ApplicationController
           redirect_to dashboard_path
         else
           flash[:alert] = "Project deletion was unsuccessful."
+        end
     end
 
     def show 
