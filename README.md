@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">:art:Paragon Painting Rails Project</h1>
+  <h1 align="center">:art:Paragon Painting & Waterproofing (Rails Project)</h1>
   </a>
 
   <p align="center">
