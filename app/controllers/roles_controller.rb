@@ -14,7 +14,7 @@ class RolesController < ApplicationController
             flash[:notice] = 'Your teammate has been added.'
             redirect_to project_roles_path(params[:project_id])
         else
-            flash[:alert] = 'Teammate creation was unsuccessful'  
+            flash[:alert] = 'Teammate creation was unsuccessful.'  
             render :new
         end
     end
@@ -30,17 +30,17 @@ class RolesController < ApplicationController
             flash[:notice] = "Your role title has been updated."
             redirect_to project_roles_path(params[:project_id])
         else
-            flash[:alert] = "Title update was unsuccessful"
+            flash[:alert] = "Title update was unsuccessful."
             render :edit
         end
     end
 
     def destroy
         if @role.destroy
-            flash[:notice] = "Teammate Removed!"
+            flash[:notice] = "Your teammate has been removed."
             redirect_to project_roles_path(params[:project_id])
         else
-            flash[:alert] = "Teammate was not removed successfully. Try again."
+            flash[:alert] = "Teammate removal was unsuccessful."
             render :index
         end
     end

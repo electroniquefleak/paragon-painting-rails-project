@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
 
     def update
         if @project.update(project_params)
-          flash[:notice]= "Project updated"
+          flash[:notice]= "Your project has been updated."
           redirect_to dashboard_path
         else
           flash[:alert]= "Project update was unsuccessful."
@@ -32,8 +32,11 @@ class ProjectsController < ApplicationController
     end
 
     def destroy
-        @project.destroy
-        redirect_to dashboard_path, notice: "Project deletion was unsuccessful."
+        if @project.destroy
+          flash[:notice] = "Your project was successfully deleted."
+          redirect_to dashboard_path
+        else
+          flash[:alert] = "Project deletion was unsuccessful."
     end
 
     def show 
