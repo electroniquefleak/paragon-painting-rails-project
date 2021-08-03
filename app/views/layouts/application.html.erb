@@ -10,6 +10,11 @@
     <title>Paragon Painting & Waterproofing</title>
   </head>
   <body>
+  <% if params[:controller] == "home" %>
+  <%= image_tag('background.png', class: 'home') %>
+  <% else %>
+  <%= image_tag('user_background.png', class: 'user-background') %>
+  <% end %>
     <%= flash_message %>
     <% if current_user %>
       <header>

@@ -7,3 +7,23 @@
 .field_with_errors input {
     border: solid 3px red;
 }
+.home {
+    height: 85vh;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
+#welcome-card {
+    width: 18rem;
+    z-index: 2;
+}
+
+.user-background {
+    height: 85vh;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+footer {
+    bottom: 0;
+}
