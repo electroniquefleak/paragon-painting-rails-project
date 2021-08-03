@@ -64,7 +64,7 @@ This is a demo application for Flatiron School's Phase 3 project cycle.
 
 While determining the best method to exhibit my compounded knowledge of Rails, I wanted my project to emulate a real world example of how to demonstrate object-oriented programming.
 
-With that in mind, I chose something that was both personal to me; and a user utilizing my application: I created an application with my uncle's commercial painting business in mind - Paragon Painting & Waterproofing.
+Using object-oriented patterns within the Rails framework, I chose something that was both personal to me; and a user utilizing my application: I created an application with my uncle's commercial painting business in mind - Paragon Painting & Waterproofing.
 
 Here's why:
 * The construction industry is one that rarely employs technology to oversee organization of crew members.
