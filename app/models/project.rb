@@ -6,8 +6,8 @@ class Project < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :location, presence: true, uniqueness: true
-    validates :start_date, presence: true, uniqueness: true
-    validates :end_date, presence: true, uniqueness: true
+    validates :start_date, presence: true
+    validates :end_date, presence: true
 
     scope :active, -> { where("? BETWEEN start_date AND end_date", Date.today)} 
     scope :past, -> { where('end_date < ?', Date.today)} 

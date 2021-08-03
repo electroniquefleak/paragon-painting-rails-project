@@ -11,10 +11,10 @@ class RolesController < ApplicationController
         @role = Role.new(role_params)
         @role.project_id = params[:project_id]
         if @role.save
-            flash[:notice] = 'Teammate Added!'
+            flash[:notice] = 'Your teammate has been added.'
             redirect_to project_roles_path(params[:project_id])
         else
-            flash[:alert] = 'Failed to add teammate!'  
+            flash[:alert] = 'Teammate creation was unsuccessful'  
             render :new
         end
     end
@@ -27,10 +27,10 @@ class RolesController < ApplicationController
 
     def update
         if @role.update(title: params[:role][:title])
-            flash[:notice] = "Role title updated!"
+            flash[:notice] = "Your role title has been updated."
             redirect_to project_roles_path(params[:project_id])
         else
-            flash[:alert] = "Title not updated, try again."
+            flash[:alert] = "Title update was unsuccessful"
             render :edit
         end
     end

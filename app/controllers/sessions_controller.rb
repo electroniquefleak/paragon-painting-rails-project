@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path, notice: "You are logged in!"
     else
       if user == nil
-        flash[:alert] = "Invalid email.  Please try again."
+        flash[:alert] = "Invalid email. Please try again."
       else
-        flash[:alert] = "Invalid password."
+        flash[:alert] = "Invalid password. Please try again."
       end
       render :new
     end

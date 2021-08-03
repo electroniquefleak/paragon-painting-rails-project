@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
 
     def destroy
         @project.destroy
-        redirect_to dashboard_path, notice: "Successful Project Deletion."
+        redirect_to dashboard_path, notice: "Project deletion was unsuccessful."
     end
 
     def show 

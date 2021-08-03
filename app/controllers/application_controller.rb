@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate_admin!
         if !current_user.admin?
-            flash[:alert] = "You do not have access to this page. Admin Only."
+            flash[:alert] = "You do not have access to this page (Admin Only)."
             redirect_to dashboard_path
         end
     end
