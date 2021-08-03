@@ -48,7 +48,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -61,16 +60,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+This is a demo application for Flatiron School's Phase 3 project cycle.
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+While determining the best method to exhibit my compounded knowledge of Rails, I wanted my project to emulate a real world example of how to demonstrate object-oriented programming.
+
+With that in mind, I chose something that was both personal to me; and a user utilizing my application: I created an application with my uncle's commercial painting business in mind - Paragon Painting & Waterproofing.
 
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+* The construction industry is one that rarely employs technology to oversee organization of crew members.
+* With that in mind, I developed an in-house organizational resource for project crews, allowing them to view projects they were assigned to; in the form of teams.
+* Users are divided by two roles, Employees & Admins: Employees have permissions to view projects and its associated teams; Admins have permissions to create, edit, and destroy both projects and user roles (teams).
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
+With that in mind, I believe that using the Rails framework fulfilled the necessities of my application; while fulfilling Flatiron's project requirements. The following documentation will provide new users with a means to setting up the server and offering additional insight on the application's development.
+
+
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
@@ -78,6 +81,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 * [Bootstrap](https://getbootstrap.com)
 * [Ruby on Rails](https://rubyonrails.org/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 
 
@@ -88,7 +92,6 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -104,27 +107,14 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-3. Enter step 3`
+3. Install gems
    ```sh
-   bundle start
+   bundle install
    ```
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/electroniquefleak/paragon-painting-rails-project/issues) for a list of proposed features (and known issues).
-
+4. Migrate database
+   ```sh
+   rails db:migrate
+   ```
 
 
 <!-- CONTRIBUTING -->
